@@ -28,39 +28,42 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'sakal'); ?></a>
 
 		<header id="masthead" class="site-header">
-			<div class="site-branding">
-				<i class="bi bi-list"></i>
-				<img class="site-header-image" src="<?php echo  header_image(); ?>" alt="" srcset="">
+			<nav id="site-navigation" class="main-navigation d-flex align-items-center">
+				<div class="container">
+					<div class="row">
+						<div id="navbar-hamburger" class="col-3 col-md-4 col-xl-6 order-md-2 d-flex align-items-center">
+							<i class="bi bi-list d-md-none d-block"></i>
+							<div id="menu-links-wrapper">
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'navbar-menu',
+										'menu_id'        => 'navbar-menu',
+									)
+								);
+								?>
 
-				<?php
-				the_custom_logo();
+							</div>
+						</div>
+						<div class="col-6 col-md-5 col-xl-3 order-md-1 d-flex justify-content-center align-items-center">
+							<?php the_custom_logo() ?>
+						</div>
 
-				if (is_front_page() && is_home()) :
-				?>
-					<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-				<?php
-				else :
-				?>
-					<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-				<?php
-				endif;
-				$sakal_description = get_bloginfo('description', 'display');
-				if ($sakal_description || is_customize_preview()) :
-				?>
-					<p class="site-description"><?php echo $sakal_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-												?></p>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
+						<div class="col-3 order-md-3 d-flex justify-content-end align-items-center">
+							<div class="nav-cart-icon-wrapper">
+								<a class="cart-customlocation me-2" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>">
+									<i class="bi bi-cart3"></i>
+									<div class="no-of-items">
+										<div>
+											<?php echo sprintf('%d', WC()->cart->get_cart_contents_count()); ?>
+										</div>
+									</div>
+								</a>
+							</div>
 
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'sakal'); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
+							<i class="bi bi-search"></i>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>

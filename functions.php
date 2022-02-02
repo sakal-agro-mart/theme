@@ -51,7 +51,7 @@ function sakal_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__('Primary', 'sakal'),
+			'navbar-menu' => esc_html__('Navbar', 'sakal'),
 		)
 	);
 
@@ -163,11 +163,49 @@ function sakal_scripts()
 }
 add_action('wp_enqueue_scripts', 'sakal_scripts');
 
+/**
+ * 
+ * Woocommerce
+ */
+function sakal_add_woocommerce_support()
+{
+	add_theme_support('woocommerce');
+	add_theme_support('wc-product-gallery-zoom');
+	add_theme_support('wc-product-gallery-lightbox');
+	add_theme_support('wc-product-gallery-slider');
+}
+add_action('after_setup_theme', 'sakal_add_woocommerce_support');
+
+/**
+ * Show cart contents / total Ajax
+ */
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+function woocommerce_header_add_to_cart_fragment($fragments)
+{
+	global $woocommerce;
+
+	ob_start();
+
+?>
+	<a class="cart-customlocation me-2" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+		<i class="bi bi-cart3"></i>
+		<div class="no-of-items">
+			<div>
+				<?php echo sprintf('%d', $woocommerce->cart->cart_contents_count) ?>
+			</div>
+		</div>
+	</a>
+<?php
+	$fragments['a.cart-customlocation'] = ob_get_clean();
+	return $fragments;
+}
+
+
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
