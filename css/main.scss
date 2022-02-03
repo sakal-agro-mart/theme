@@ -1,7 +1,10 @@
-@import "./scss/bootstrap/bootstrap.scss";
-
 $theme-black: #333333;
 $theme-green: #adcb0b;
+
+$primary: $theme-green;
+$dark: $theme-black;
+
+@import "./scss/bootstrap/bootstrap.scss";
 
 body,
 html {
@@ -22,3 +25,4 @@ a {
 }
 
 @import "./scss/header.scss";
+@import "./scss/footer.scss";

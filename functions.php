@@ -124,17 +124,32 @@ add_action('after_setup_theme', 'sakal_content_width', 0);
  */
 function sakal_widgets_init()
 {
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Sidebar', 'sakal'),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'sakal'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+	register_sidebar(array(
+		'name'          => __('Footer Column One', 'sakal'),
+		'id'            => 'footerone',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-title">',
+		'after_title'   => '</h3>',
+	));
+
+	register_sidebar(array(
+		'name'          => __('Footer Column Two', 'sakal'),
+		'id'            => 'footertwo',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-title">',
+		'after_title'   => '</h3>',
+	));
+
+	register_sidebar(array(
+		'name'          => __('Footer Column Three', 'sakal'),
+		'id'            => 'footerthree',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-title">',
+		'after_title'   => '</h3>',
+	));
 }
 add_action('widgets_init', 'sakal_widgets_init');
 
