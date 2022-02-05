@@ -1,61 +1,221 @@
 <?php
-/**
- * sakal Theme Customizer
- *
- * @package sakal
- */
 
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function sakal_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+function sakal_customize_register($wp_customize)
+{
+	$largeWidth = 1940;
+	$largeHeight = 500;
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial(
-			'blogname',
-			array(
-				'selector'        => '.site-title a',
-				'render_callback' => 'sakal_customize_partial_blogname',
-			)
-		);
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription',
-			array(
-				'selector'        => '.site-description',
-				'render_callback' => 'sakal_customize_partial_blogdescription',
-			)
-		);
-	}
+	$mobileWidth = 412;
+	$mobileHeight = 500;
+
+	/*
+
+
+
+		for large screens
+		the section in the left side-bar
+	*/
+	$wp_customize->add_section('sakal_carousel_section', array(
+		'title'    => __('Carousel', 'sakal'),
+		'priority' => 30
+	));
+
+	/*
+
+
+
+
+		first carousel
+	*/
+	$wp_customize->add_setting('sakal_carousel_first_image', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sakal_carousel_first_image', array(
+		'label'    => __('First Image', 'sakal'),
+		'section'  => 'sakal_carousel_section',
+		'width' => $largeWidth,
+		'height' => $largeHeight
+	)));
+
+	$wp_customize->add_setting('sakal_carousel_first_product', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(
+		'sakal_carousel_first_product',
+		array(
+			'type' => 'text',
+			'label'    => __('First Product', 'sakal'),
+			'section'  => 'sakal_carousel_section',
+		)
+	);
+
+	/*
+
+
+
+
+		second carousel
+	*/
+	$wp_customize->add_setting('sakal_carousel_second_image', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sakal_carousel_second_image', array(
+		'label'    => __('Second Image', 'sakal'),
+		'section'  => 'sakal_carousel_section',
+		'width' => $largeWidth,
+		'height' => $largeHeight
+	)));
+
+	$wp_customize->add_setting('sakal_carousel_second_product', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(
+		'sakal_carousel_second_product',
+		array(
+			'type' => 'text',
+			'label'    => __('Second Product', 'sakal'),
+			'section'  => 'sakal_carousel_section',
+		)
+	);
+
+	/*
+
+
+
+
+		third carousel
+	*/
+	$wp_customize->add_setting('sakal_carousel_third_image', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sakal_carousel_third_image', array(
+		'label'    => __('Third Image', 'sakal'),
+		'section'  => 'sakal_carousel_section',
+		'width' => $largeWidth,
+		'height' => $largeHeight
+	)));
+
+	$wp_customize->add_setting('sakal_carousel_third_product', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(
+		'sakal_carousel_third_product',
+		array(
+			'type' => 'text',
+			'label'    => __('Third Product', 'sakal'),
+			'section'  => 'sakal_carousel_section',
+		)
+	);
+
+	/*
+
+
+
+		for mobile screens
+		the section in the left side-bar
+	*/
+	$wp_customize->add_section('sakal_mobile_carousel_section', array(
+		'title'    => __('Mobile Carousel', 'sakal'),
+		'priority' => 40
+	));
+
+	/*
+
+
+
+
+		first carousel
+	*/
+	$wp_customize->add_setting('sakal_mobile_carousel_first_image', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sakal_mobile_carousel_first_image', array(
+		'label'    => __('First Image', 'sakal'),
+		'section'  => 'sakal_mobile_carousel_section',
+		'width' => $mobileWidth,
+		'height' => $mobileHeight
+	)));
+
+	$wp_customize->add_setting('sakal_mobile_carousel_first_product', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(
+		'sakal_mobile_carousel_first_product',
+		array(
+			'type' => 'text',
+			'label'    => __('First Product', 'sakal'),
+			'section'  => 'sakal_mobile_carousel_section',
+		)
+	);
+
+	/*
+
+
+
+
+		second carousel
+	*/
+	$wp_customize->add_setting('sakal_mobile_carousel_second_image', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sakal_mobile_carousel_second_image', array(
+		'label'    => __('Second Image', 'sakal'),
+		'section'  => 'sakal_mobile_carousel_section',
+		'width' => $mobileWidth,
+		'height' => $mobileHeight
+	)));
+
+	$wp_customize->add_setting('sakal_mobile_carousel_second_product', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(
+		'sakal_mobile_carousel_second_product',
+		array(
+			'type' => 'text',
+			'label'    => __('Second Product', 'sakal'),
+			'section'  => 'sakal_mobile_carousel_section',
+		)
+	);
+
+	/*
+
+
+
+
+		third carousel
+	*/
+	$wp_customize->add_setting('sakal_mobile_carousel_third_image', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sakal_mobile_carousel_third_image', array(
+		'label'    => __('Third Image', 'sakal'),
+		'section'  => 'sakal_mobile_carousel_section',
+		'width' => $mobileWidth,
+		'height' => $mobileHeight
+	)));
+
+	$wp_customize->add_setting('sakal_mobile_carousel_third_product', array(
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control(
+		'sakal_mobile_carousel_third_product',
+		array(
+			'type' => 'text',
+			'label'    => __('Third Product', 'sakal'),
+			'section'  => 'sakal_mobile_carousel_section',
+		)
+	);
 }
-add_action( 'customize_register', 'sakal_customize_register' );
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function sakal_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function sakal_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function sakal_customize_preview_js() {
-	wp_enqueue_script( 'sakal-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
-}
-add_action( 'customize_preview_init', 'sakal_customize_preview_js' );
+add_action('customize_register', 'sakal_customize_register');
