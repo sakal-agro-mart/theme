@@ -153,6 +153,9 @@ function sakal_widgets_init()
 }
 add_action('widgets_init', 'sakal_widgets_init');
 
+
+
+
 /**
  * Enqueue scripts and styles.
  */
@@ -176,43 +179,9 @@ add_action('wp_enqueue_scripts', 'sakal_scripts');
 
 
 /**
- * 
- * Woocommerce
+ * Implement Woocommerce
  */
-function sakal_add_woocommerce_support()
-{
-	add_theme_support('woocommerce');
-	add_theme_support('wc-product-gallery-zoom');
-	add_theme_support('wc-product-gallery-lightbox');
-	add_theme_support('wc-product-gallery-slider');
-}
-add_action('after_setup_theme', 'sakal_add_woocommerce_support');
-
-/**
- * Show cart contents / total Ajax
- */
-add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
-function woocommerce_header_add_to_cart_fragment($fragments)
-{
-	global $woocommerce;
-
-	ob_start();
-
-?>
-	<a class="cart-customlocation me-2" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-		<i class="bi bi-cart3"></i>
-		<div class="no-of-items">
-			<div>
-				<?php echo sprintf('%d', $woocommerce->cart->cart_contents_count) ?>
-			</div>
-		</div>
-	</a>
-<?php
-	$fragments['a.cart-customlocation'] = ob_get_clean();
-	return $fragments;
-}
-
-
+require get_template_directory() . '/inc/woocommerce.php';
 
 /**
  * Implement the Custom Header feature.

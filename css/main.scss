@@ -20,9 +20,10 @@ a {
 
   &:hover {
     color: $theme-black;
-    opacity: 0.8;
   }
 }
 
 @import "./scss/header.scss";
 @import "./scss/footer.scss";
+@import "./scss/products.scss";
+@import "./scss/checkout.scss";

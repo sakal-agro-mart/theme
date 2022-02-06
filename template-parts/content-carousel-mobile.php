@@ -1,4 +1,4 @@
-<div id="sakalMobileCarousel" class="carousel slide d-lg-none" data-bs-ride="carousel">
+<div id="sakalMobileCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#sakalMobileCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#sakalMobileCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>

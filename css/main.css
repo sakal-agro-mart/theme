@@ -11132,7 +11132,6 @@ a {
 }
 a:hover {
   color: #333333;
-  opacity: 0.8;
 }
 
 nav {
@@ -11154,6 +11153,9 @@ nav #menu-links-wrapper ul li {
   display: inline-block;
   padding-right: 10px;
 }
+nav #menu-links-wrapper ul li a:hover {
+  color: #adcb0b;
+}
 nav .custom-logo-link img {
   width: 300px;
   height: auto;
@@ -11163,18 +11165,20 @@ nav .nav-cart-icon-wrapper {
 }
 nav .nav-cart-icon-wrapper .no-of-items {
   position: absolute;
-  top: -5px;
-  left: -10px;
+  top: -8px;
+  left: -12px;
   z-index: -1;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   background-color: #adcb0b;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   border-radius: 100px;
   font-size: 0.8rem;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 1200px) {
@@ -11234,6 +11238,94 @@ footer {
   .sidebar-footer ul li {
     padding-top: 10px;
   }
+}
+/**
+ *
+ *
+ * Home-Page
+ */
+.onsale {
+  background-color: #adcb0b !important;
+  border-radius: 0 !important;
+  left: 0px !important;
+  top: 0px !important;
+  right: auto !important;
+  padding: 0 20px 0 20px !important;
+  margin: 0 !important;
+}
+
+.price {
+  color: #adcb0b !important;
+}
+
+/**
+ *
+ *
+ * Each-Product-Page
+ */
+.summary .price {
+  color: #adcb0b !important;
+}
+.summary .input-text.qty {
+  padding: 3.6px;
+}
+.summary .single_add_to_cart_button {
+  background-color: #adcb0b !important;
+}
+.summary .sku_wrapper {
+  display: none !important;
+}
+
+/**
+ *
+ *
+ * Shop-Page
+ */
+mark.count, .count.mark {
+  background-color: white;
+}
+
+.posted_in {
+  padding-bottom: 20px;
+}
+
+.tagged_as a {
+  background-color: #eaeff3;
+  padding: 10px 20px 10px 20px;
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+.tagged_as a::before {
+  content: "#";
+}
+
+.star-rating span:before,
+.star-rating::before,
+p.stars a:hover:after,
+p.stars a:after {
+  color: gold !important;
+}
+
+.stars a {
+  color: gold !important;
+}
+
+.woocommerce .checkout-button {
+  background-color: #adcb0b !important;
+}
+
+.form-row.woocommerce-invalid .chzn-single,
+.form-row.woocommerce-invalid .chzn-drop,
+.form-row.woocommerce-invalid input.input-text,
+.form-row.woocommerce-invalid select {
+  border: 1px solid red;
+}
+
+.form-row.woocommerce-validated .chzn-single,
+.form-row.woocommerce-validated .chzn-drop,
+.form-row.woocommerce-validated input.input-text,
+.form-row.woocommerce-validated select {
+  border: 1px solid #adcb0b;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -51,7 +51,7 @@
 
 						<div class="col-3 order-md-3 d-flex justify-content-end align-items-center">
 							<div class="nav-cart-icon-wrapper">
-								<a class="cart-customlocation me-2" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>">
+								<a class="cart-customlocation me-3" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>">
 									<i class="bi bi-cart3"></i>
 									<div class="no-of-items">
 										<div>

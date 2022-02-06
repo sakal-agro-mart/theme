@@ -17,6 +17,10 @@ nav {
       li {
         display: inline-block;
         padding-right: 10px;
+
+        a:hover {
+          color: $theme-green;
+        }
       }
     }
   }
@@ -32,18 +36,20 @@ nav {
 
     .no-of-items {
       position: absolute;
-      top: -5px;
-      left: -10px;
+      top: -8px;
+      left: -12px;
       z-index: -1;
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       background-color: $theme-green;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
       border-radius: 100px;
       font-size: 0.8rem;
+      font-weight: 700;
     }
   }
 }
