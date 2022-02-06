@@ -11328,4 +11328,101 @@ p.stars a:after {
   border: 1px solid #adcb0b;
 }
 
+.sakal-blog-container {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+.sakal-blog-container .sakal-blog-thumbnail-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  overflow: hidden;
+}
+.sakal-blog-container .sakal-blog-thumbnail-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.sakal-blog-container .sakal-blog-title {
+  font-size: 2.4rem;
+  font-weight: 200;
+}
+.sakal-blog-container .sakal-blog-date-line {
+  display: flex;
+  color: lightgray;
+}
+.sakal-blog-container .sakal-blog-excerpt {
+  color: gray;
+}
+.sakal-blog-container .sakal-blog-readmore {
+  color: #adcb0b;
+  text-transform: uppercase;
+}
+
+.sakal-single-post-container {
+  padding-bottom: 50px;
+}
+.sakal-single-post-container .attachment-post-thumbnail {
+  width: 100%;
+  height: auto;
+}
+.sakal-single-post-container .sakal-single-blog-title {
+  font-size: 2.4rem;
+  font-weight: 200;
+}
+.sakal-single-post-container .sakal-single-blog-date-line {
+  color: gray;
+}
+.sakal-single-post-container .entry-content {
+  text-align: left;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.sakal-single-post-container input[type=submit] {
+  background-color: #adcb0b;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 16px 10px 16px;
+  border-radius: 3px;
+}
+.sakal-single-post-container #comments #cancel-comment-reply-link {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #adcb0b;
+}
+.sakal-single-post-container #comments #cancel-comment-reply-link::before {
+  content: " ";
+  display: block;
+}
+.sakal-single-post-container #comments .says {
+  display: none;
+}
+.sakal-single-post-container #comments footer.comment-meta {
+  padding-left: 0;
+}
+.sakal-single-post-container #comments footer.comment-meta .comment-author.vcard .fn {
+  padding-left: 10px;
+}
+.sakal-single-post-container #comments footer.comment-meta .comment-author.vcard time {
+  color: lightgray !important;
+}
+.sakal-single-post-container #comments footer.comment-meta .comment-edit-link {
+  display: none;
+}
+.sakal-single-post-container #comments ol,
+.sakal-single-post-container #comments ul {
+  list-style-type: none;
+  margin: 0;
+}
+.sakal-single-post-container #comments .reply {
+  margin-bottom: 20px;
+}
+.sakal-single-post-container #comments .reply a {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: #adcb0b;
+}
+
 /*# sourceMappingURL=main.css.map */

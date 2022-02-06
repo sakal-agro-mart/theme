@@ -1,5 +1,6 @@
 $theme-black: #333333;
 $theme-green: #adcb0b;
+$theme-gray: #eaeff3;
 
 $primary: $theme-green;
 $dark: $theme-black;
@@ -27,3 +28,5 @@ a {
 @import "./scss/footer.scss";
 @import "./scss/products.scss";
 @import "./scss/checkout.scss";
+@import "./scss/home.scss";
+@import "./scss/single.scss";

@@ -1,0 +1,84 @@
+.sakal-single-post-container {
+  padding-bottom: 50px;
+
+  .attachment-post-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+
+  .sakal-single-blog-title {
+    font-size: 2.4rem;
+    font-weight: 200;
+  }
+
+  .sakal-single-blog-date-line {
+    color: gray;
+  }
+
+  .entry-content {
+    text-align: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  input[type="submit"] {
+    background-color: $theme-green;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px 16px 10px 16px;
+    border-radius: 3px;
+  }
+
+  #comments {
+    #cancel-comment-reply-link {
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $theme-green;
+
+      &::before {
+        content: " ";
+        display: block;
+      }
+    }
+
+    .says {
+      display: none;
+    }
+
+    footer.comment-meta {
+      padding-left: 0;
+
+      .comment-author.vcard {
+        .fn {
+          padding-left: 10px;
+        }
+
+        time {
+          color: lightgray !important;
+        }
+      }
+
+      .comment-edit-link {
+        display: none;
+      }
+    }
+
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+    }
+
+    .reply {
+      margin-bottom: 20px;
+
+      a {
+        box-sizing: border-box;
+        text-transform: uppercase;
+        color: $theme-green;
+      }
+    }
+  }
+}

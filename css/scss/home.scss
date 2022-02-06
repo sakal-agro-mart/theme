@@ -1,0 +1,36 @@
+.sakal-blog-container {
+  margin-bottom: 80px;
+  margin-top: 80px;
+
+  .sakal-blog-thumbnail-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    overflow: hidden;
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+
+  .sakal-blog-title {
+    font-size: 2.4rem;
+    font-weight: 200;
+  }
+
+  .sakal-blog-date-line {
+    display: flex;
+    color: lightgray;
+  }
+
+  .sakal-blog-excerpt {
+    color: gray;
+  }
+
+  .sakal-blog-readmore {
+    color: $theme-green;
+    text-transform: uppercase;
+  }
+}
