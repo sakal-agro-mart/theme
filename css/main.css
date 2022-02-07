@@ -11313,6 +11313,10 @@ p.stars a:after {
 .woocommerce .checkout-button {
   background-color: #adcb0b !important;
 }
+.woocommerce #place_order {
+  color: white !important;
+  background-color: #adcb0b !important;
+}
 
 .form-row.woocommerce-invalid .chzn-single,
 .form-row.woocommerce-invalid .chzn-drop,

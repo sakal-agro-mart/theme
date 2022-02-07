@@ -2,6 +2,11 @@
   .checkout-button {
     background-color: $theme-green !important;
   }
+
+  #place_order {
+    color: white !important;
+    background-color: $theme-green !important;
+  }
 }
 
 .form-row.woocommerce-invalid .chzn-single,

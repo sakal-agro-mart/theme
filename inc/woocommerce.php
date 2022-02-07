@@ -75,3 +75,19 @@ function sakal_cat_and_tags_wrapper_end()
 
 add_action('woocommerce_before_cart', 'sakal_wrapper_start', 10);
 add_action('woocommerce_after_cart', 'sakal_wrapper_end', 10);
+
+
+// for checkout page
+
+add_action('woocommerce_before_checkout_form', 'sakal_wrapper_start', 10);
+add_action('woocommerce_after_checkout_form', 'sakal_wrapper_end', 10);
+add_action('woocommerce_checkout_after_customer_details', 'sakal_spacer_using_hooks', 10);
+
+function sakal_spacer_using_hooks()
+{
+    echo '<div class="py-4"></div>';
+}
+
+// for order-received page OR thank-you-page
+add_action('woocommerce_before_thankyou', 'sakal_wrapper_start', 10);
+add_action('woocommerce_after_thankyou', 'sakal_wrapper_end', 10);
