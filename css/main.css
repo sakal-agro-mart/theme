@@ -11135,7 +11135,8 @@ a:hover {
 }
 
 nav {
-  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 nav #menu-links-wrapper {
   transition: 0.3s;
