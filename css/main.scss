@@ -24,9 +24,16 @@ a {
   }
 }
 
+@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+  .woocommerce {
+    min-height: 500px;
+  }
+}
+
 @import "./scss/header.scss";
 @import "./scss/footer.scss";
 @import "./scss/products.scss";
 @import "./scss/checkout.scss";
 @import "./scss/home.scss";
 @import "./scss/single.scss";
+@import "./scss/cart.scss";

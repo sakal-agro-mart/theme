@@ -1,6 +1,44 @@
 nav {
   padding-top: 10px;
   padding-bottom: 10px;
+  position: relative;
+
+  #sakal-search-absolute {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transition: 0.3s;
+    visibility: hidden;
+
+    .sakal-white-wrapper {
+      background-color: white;
+      max-width: 600px;
+    }
+
+    .aws-wrapper {
+      margin-right: 20px;
+
+      .aws-search-field {
+        min-width: 500px;
+        border: none;
+        padding: 0 20px 0 20px;
+        border-radius: 10px !important;
+        background-color: #f6f6f6;
+
+        &::placeholder {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    #sakal-cross-container {
+      cursor: pointer;
+      color: $theme-black;
+    }
+  }
 
   #menu-links-wrapper {
     transition: 0.3s;
@@ -53,6 +91,10 @@ nav {
       font-weight: 700;
     }
   }
+
+  #sakal-search-wrapper {
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: map-get($map: $grid-breakpoints, $key: "xl")) {
@@ -70,9 +112,19 @@ nav {
   nav {
     position: relative;
 
+    #sakal-search-absolute {
+      .aws-wrapper {
+        padding: 5px 0 5px 0;
+        .aws-search-field {
+          width: calc(100vw - 60px);
+          min-width: 0;
+        }
+      }
+    }
+
     #menu-links-wrapper {
       position: absolute;
-      z-index: 10000;
+      z-index: 10;
       left: 0;
       right: 0;
       top: 40px;

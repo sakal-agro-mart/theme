@@ -29,6 +29,19 @@
 
 		<header id="masthead" class="site-header">
 			<nav id="site-navigation" class="main-navigation d-flex align-items-center">
+				<div id="sakal-search-absolute">
+					<div class="container h-100 d-flex justify-content-end">
+						<div class="sakal-white-wrapper h-100 d-flex align-items-center justify-content-md-end justify-content-between">
+							<?php aws_get_search_form(true); ?>
+
+							<span id="sakal-cross-container">
+								<i class="bi bi-x-lg"></i>
+							</span>
+
+						</div>
+					</div>
+				</div>
+
 				<div class="container">
 					<div class="row">
 						<div id="navbar-hamburger" class="col-3 col-md-4 col-xl-6 order-md-2 d-flex align-items-center">
@@ -61,7 +74,9 @@
 								</a>
 							</div>
 
-							<i class="bi bi-search"></i>
+							<div id="sakal-search-wrapper">
+								<i class="bi bi-search"></i>
+							</div>
 						</div>
 					</div>
 				</div>

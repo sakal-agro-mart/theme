@@ -168,6 +168,7 @@ function sakal_scripts()
 
 	// scripts
 	wp_enqueue_script('sakal-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('sakal-search', get_template_directory_uri() . '/js/search.js', array(), _S_VERSION, true);
 	wp_enqueue_script('bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap/bootstrap.js', array(), _S_VERSION, false);
 
 	// comments on posts?
